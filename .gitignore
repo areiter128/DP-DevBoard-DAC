@@ -67,3 +67,8 @@ disassembly/
 !dist/
 
 
+pcmcDAC.X/nbproject/private/private.xml
+pcmcDAC.X/nbproject/Makefile-genesis.properties
+pcmcDAC.X/nbproject/project.xml
+pcmcDAC.X/nbproject/private/configurations.xml
+pcmcDAC.X/dist/DPDB_MA330048/debug/
