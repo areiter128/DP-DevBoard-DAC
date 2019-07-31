@@ -47,7 +47,7 @@
 #include "init/init_pwm.h"
 
 #include "pwr_control.h"
-#include "ext_reference.h"
+#include "task_external_reference.h"
 
 
 #ifdef	__cplusplus

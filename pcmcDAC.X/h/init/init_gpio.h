@@ -38,7 +38,7 @@
 
 #include "globals.h"
 
-#ifdef _DPDB_wCKDPPIM_
+#ifdef __DPDB_MA330048__
     // Red LED on CK_DP_PIM
     #define DBGLED_SET		{ _LATD15 = 1; }
     #define DBGLED_CLEAR	{ _LATD15 = 0; }

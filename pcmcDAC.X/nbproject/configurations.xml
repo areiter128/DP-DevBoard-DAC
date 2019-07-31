@@ -4,9 +4,13 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f3" displayName="apps" projectFiles="true">
+        <itemPath>h/task_external_reference.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="control" projectFiles="true">
         <itemPath>h/npnz16b.h</itemPath>
         <itemPath>h/c2p2z.h</itemPath>
+        <itemPath>h/pwr_control.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="init" projectFiles="true">
         <itemPath>h/init/init_fosc.h</itemPath>
@@ -17,9 +21,7 @@
         <itemPath>h/init/init_adc.h</itemPath>
       </logicalFolder>
       <itemPath>h/main.h</itemPath>
-      <itemPath>h/ext_reference.h</itemPath>
       <itemPath>h/globals.h</itemPath>
-      <itemPath>h/pwr_control.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -28,9 +30,13 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f3" displayName="apps" projectFiles="true">
+        <itemPath>src/task_external_reference.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="control" projectFiles="true">
         <itemPath>src/c2p2z.c</itemPath>
         <itemPath>src/c2p2z_asm.s</itemPath>
+        <itemPath>src/pwr_control.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="init" projectFiles="true">
         <itemPath>src/init/init_fosc.c</itemPath>
@@ -42,9 +48,7 @@
       </logicalFolder>
       <itemPath>src/main.c</itemPath>
       <itemPath>src/config_bits.c</itemPath>
-      <itemPath>src/ext_reference.c</itemPath>
       <itemPath>src/globals.c</itemPath>
-      <itemPath>src/pwr_control.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -62,7 +66,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="DPDB_wCKPIM" type="2">
+    <conf name="DPDB_MA330048" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>dsPIC33CK256MP506</targetDevice>
@@ -215,7 +219,7 @@
         <property key="generic-16-bit" value="false"/>
         <property key="legacy-libc" value="true"/>
         <property key="mpreserve-all" value="false"/>
-        <property key="oXC16glb-macros" value="_DPDB_wCKDPPIM_"/>
+        <property key="oXC16glb-macros" value="__DPDB_MA330048__"/>
         <property key="output-file-format" value="elf"/>
         <property key="preserve-all" value="false"/>
         <property key="preserve-file" value=""/>
