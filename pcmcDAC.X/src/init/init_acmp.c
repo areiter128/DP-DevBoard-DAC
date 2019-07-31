@@ -52,11 +52,13 @@ volatile uint16_t init_acmp(void) {
     DAC1CONLbits.IRQM = 0b00; // Interrupt Mode Selection: Interrupts are disabled
     DAC1CONLbits.CBE = 1; // Comparator Blank Enable: Enables the analog comparator output to be blanked (gated off) during the recovery transition following the completion of a slope operation
     DAC1CONLbits.DACOEN = 1; // DACx Output Buffer Enable: DACx analog voltage is connected to the DACOUT1 pin (RA3/TP35 on DPSK3)
-    DAC1CONLbits.FLTREN = 0; // Comparator Digital Filter Enable: Digital filter is disabled
     // DAC1CONLbits.CMPSTAT (read only bit)
-    DAC1CONLbits.CMPPOL = 0; // Comparator Output Polarity Control: Output is non-inverted
-    DAC1CONLbits.INSEL = 0b000; // Comparator Input Source Select: feedback is connected to CMPxB input pin
-    DAC1CONLbits.HYSPOL = 0; // Comparator Hysteresis Polarity Selection: Hysteresis is applied to the rising edge of the comparator output
+
+    // Comparator filter and hysteresis options
+    DAC1CONLbits.FLTREN = 0; // Comparator Digital Filter Enable: Digital filter is disabled
+    DAC1CONLbits.CMPPOL = 0; // Comparator Output Polarity Control: Output is (0=non-inverted, 1=inverted)
+    DAC1CONLbits.INSEL = 0b011; // Comparator Input Source Select: feedback is connected to (0=CMPxA, 1=CMPxB, 2=CMPxC, 3=CMPxD) input pin
+    DAC1CONLbits.HYSPOL = 0; // Comparator Hysteresis Polarity Selection: Hysteresis is applied to the (0=rising, 1=falling) edge of the comparator output
     DAC1CONLbits.HYSSEL = 0b00; // Comparator Hysteresis Selection: 45 mv hysteresis (0 = 0mV, 1 = 15mV, 2 = 30mV, 3 = 45mV)
     
     // DACxCONH: DACx CONTROL HIGH REGISTER

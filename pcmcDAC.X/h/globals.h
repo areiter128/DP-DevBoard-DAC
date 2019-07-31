@@ -118,7 +118,7 @@ extern "C" {
 // Feedback Loop Output Settings
 #define DAC_MINIMUM     0.650   // Minimum DAC voltage in [V]
 #define DAC_MAXIMUM     3.100   // Maximum DAC voltage in [V]
-#define SLEW_RATE        0.100   // Compensation ramp in [V/usec] (SLPxDAT is calculated below)
+#define SLEW_RATE       0.100   // Compensation ramp in [V/usec] (SLPxDAT is calculated below)
 
 //-------    
 #define DAC_REF         (double)3.300           // DAC reference voltage (usually AVDD)
@@ -245,9 +245,37 @@ extern "C" {
 #define PGD       (uint16_t)((POWER_GOOD_DELAY * MAIN_EXECUTION_PERIOD)-1.0)
 #define REF_STEP  (uint16_t)(V_OUT_REF / (RPER + 1.0))
 
+/*!External Reference Voltage Input
+ * *************************************************************************************************
+ * Summary:
+ * Global option to enable/disable the external reference voltage input of the SEPIC board
+ * 
+ * Description:
+ * The SEPIC board offers an external reference voltage input. The input voltage between 0 to 3.3V
+ * is read from this pin being interpreted as adjustment range between 0 to 100%.
+ * The effective reference range needs to be specified using the defines below, where
+ * 
+ *    - V_REF_MINIMUM defines the reference value when the external reference voltage input 
+ *                    reads 0V (=0 ticks)
+ *    - V_REF_MAXIMUM defines the reference value when the external reference voltage input
+ *                    reads 3.3V (=4095 ticks).
+ * 
+ * Both values need to be specified as SEPIC output voltage level in [V]. The macros will 
+ * calculate the effective integer numbers based on the ADC and voltage divider settings specified 
+ * in the hardware- and microcontroller abstraction sections of this file
+ * 
+ * *************************************************************************************************/
 
+#define USE_EXTERNAL_REFERENCE  true    // Enable/disable external reference voltage input
     
-/*!POWER_CONTROLLER_t data structure
+#define V_REF_MINIMUM       0.0  // lower output voltage limit in [V]
+#define V_REF_MAXIMUM       3.3 // upper output voltage limit in [V]
+    
+#define V_REF_MIN           (uint16_t)(V_REF_MINIMUM * 1.0 / ADC_GRAN)
+#define V_REF_MAX           (uint16_t)(V_REF_MAXIMUM * 1.0 / ADC_GRAN)
+#define V_REF_DIFF          (V_REF_MAX - V_REF_MIN)
+    
+/*!Microcontroller Signal Mapping
  * *************************************************************************************************
  * Summary:
  * Global Signal Mapping
@@ -266,7 +294,8 @@ extern "C" {
  *  
  * *************************************************************************************************/
 
-#define _VOUT_ADCInterrupt        _ADCAN16Interrupt   
+#define _VOUT_ADCInterrupt        _ADCAN16Interrupt
+#define REG_VIN_ADCBUF            ADCBUF12
 #define REG_VOUT_ADCBUF           ADCBUF16
 #define REG_VOUT_ADCTRIG          PG2TRIGA
 #define VOUT_FEEDBACK_OFFSET      0

@@ -19,6 +19,7 @@ volatile uint16_t tgl_cnt = 0;  // local counter of LED toggle loops
 volatile uint32_t dac_cnt = 0;  // local counter of LED toggle loops
 #define DACMOD_COUNT    1999    // DAC increment interval of (1999 + 1) x 100usec = 200ms
 
+volatile bool btn_push = false;
 
 int main(void) {
 
@@ -50,14 +51,11 @@ int main(void) {
     _LATB11 = 0;
     RPOR5bits.RP43R = 23;      // Assign COMP1 (=23) output to pin RB11 = RP43  (DSP_GPIO3)
 __builtin_write_RPCON(0x0800);
+
 // ===========================================
-    
     
     // Enable Timer1
     T1CONbits.TON = 1; 
-    
-    DBGPIN_2_CLEAR;
-    DBGPIN_3_CLEAR;
     
     while (1) {
 
@@ -76,18 +74,32 @@ __builtin_write_RPCON(0x0800);
         } // Toggle LED and reset toggle counter
         Nop();
         
+        
+        if((!_RC11) && (!btn_push)) {
+        // If SW1 on the development board is pressed...
         // Starting at a slope of 100mV/usec (=8), the slew rate is incremented in single steps
         // up to 1V/usec (=80) and then resets to 100mV/usec (=8)
-        if (dac_cnt++ > DACMOD_COUNT)
-        {
-            if(SLP1DAT < 80)
-            { SLP1DAT++; }
-            else
-            { SLP1DAT = DAC_SLOPE_RATE; }
-            
-            dac_cnt = 0;
+
+            btn_push = true; 
+            DBGLED_RD_SET;
+            DBGLED_GN_CLEAR;
+
+            if(SLP1DAT < 120) {
+                SLP1DAT += 8;   // Increment slope slew rate by 100mV/usec up to 1.5V
+            }
+            else {
+                SLP1DAT = DAC_SLOPE_RATE;
+            }
+
+        }
+
+        if((_RC11) && (btn_push)) { 
+            btn_push = false; 
+            DBGLED_RD_CLEAR;
+            DBGLED_GN_SET;
         }
         
+
         
     }
 

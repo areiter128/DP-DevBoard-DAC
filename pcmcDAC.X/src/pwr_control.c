@@ -227,13 +227,19 @@ volatile uint16_t exec_pwr_control(void) {
 
 void __attribute__((__interrupt__, auto_psv, context))_VOUT_ADCInterrupt(void)
 {
+    DGBPIN_2_SET;
+    
     converter.status.flags.adc_active = true;
+    converter.data.v_in = REG_VIN_ADCBUF;
     converter.data.v_out = REG_VOUT_ADCBUF;
 
     // here the control loop would be called
-    //    c2p2z_Update(&c2p2z);
+    //    c2p2z_Update(&c2p2z); // Control loop has been disabled
+    DAC1DATH = converter.data.v_ref;  // Copy averaged value into reference value
 
     _ADCAN16IF = 0;  // Clear the ADCANx interrupt flag 
+
+    DGBPIN_2_CLEAR;
     
 }
 

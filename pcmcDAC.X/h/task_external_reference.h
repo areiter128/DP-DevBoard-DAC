@@ -42,12 +42,6 @@
 extern "C" {
 #endif /* __cplusplus */
 
-#define V_REF_MINIMUM       0.0  // lower output voltage limit in [V]
-#define V_REF_MAXIMUM       3.3 // upper output voltage limit in [V]
-    
-#define V_REF_MIN           (uint16_t)(V_REF_MINIMUM * 1.0 / ADC_GRAN)
-#define V_REF_MAX           (uint16_t)(V_REF_MAXIMUM * 1.0 / ADC_GRAN)
-#define V_REF_DIFF          (V_REF_MAX - V_REF_MIN)
 
 extern volatile uint16_t ext_reference_init(void);
 

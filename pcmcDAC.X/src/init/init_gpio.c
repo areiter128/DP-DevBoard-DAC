@@ -16,10 +16,14 @@ volatile uint16_t init_gpio(void) {
     ANSELC = 0x0000;
     ANSELD = 0x0000;
     
-    DBGLED_INIT;
-    DBGPIN_1_INIT;
-    DBGPIN_2_INIT;
-    DBGPIN_3_INIT;
+    DBGLED_INIT;    // On-PIM Debug LED
+    DBGPIN_1_INIT;  // On-PIM Debug Pin
+    
+    DBGLED_RD_INIT; // DevBoard Red LED 
+    DBGLED_GN_INIT; // DevBoard Green LED 
+    
+    DGBPIN_2_INIT;  // DevBoard Debug Pin TP34
+    DGBPIN_3_INIT;  // DevBoard Debug Pin TP36
     
     return(1);
 }

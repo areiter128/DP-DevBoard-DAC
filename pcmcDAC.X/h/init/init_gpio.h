@@ -39,29 +39,43 @@
 #include "globals.h"
 
 #ifdef __DPDB_MA330048__
+
     // Red LED on CK_DP_PIM
-    #define DBGLED_SET		{ _LATD15 = 1; }
-    #define DBGLED_CLEAR	{ _LATD15 = 0; }
-    #define DBGLED_TOGGLE	{ _LATD15 ^= 1; }
-    #define DBGLED_INIT		{ _LATD15 = 0; _TRISD15 = 0; }
+    #define DBGLED_SET          { _LATD15 = 1; }
+    #define DBGLED_CLEAR        { _LATD15 = 0; }
+    #define DBGLED_TOGGLE       { _LATD15 ^= 1; }
+    #define DBGLED_INIT         { _LATD15 = 0; _TRISD15 = 0; }
 
     // TP4 on CK_DP_PIM
-    #define DBGPIN_1_SET	{ _LATD12 = 1; }
-    #define DBGPIN_1_CLEAR	{ _LATD12 = 0; }
-    #define DBGPIN_1_TOGGLE	{ _LATD12 ^= 1; }
-    #define DBGPIN_1_INIT	{ _LATD12 = 0; _TRISD12 = 0; }
+    #define DBGPIN_1_SET        { _LATD12 = 1; }
+    #define DBGPIN_1_CLEAR      { _LATD12 = 0; }
+    #define DBGPIN_1_TOGGLE     { _LATD12 ^= 1; }
+    #define DBGPIN_1_INIT       { _LATD12 = 0; _TRISD12 = 0; }
 
-    // TP53 on Digital Power Development Board
-    #define DBGPIN_2_SET	{ _LATB6 = 1; }
-    #define DBGPIN_2_CLEAR	{ _LATB6 = 0; }
-    #define DBGPIN_2_TOGGLE	{ _LATB6 ^= 1; }
-    #define DBGPIN_2_INIT	{ _LATB6 = 0; _TRISB6 = 0; }
+    // TP52 on Digital Power Development Board
+    #define DBGLED_RD_SET       { _LATD8 = 1; }
+    #define DBGLED_RD_CLEAR     { _LATD8 = 0; }
+    #define DBGLED_RD_TOGGLE	{ _LATD8 ^= 1; }
+    #define DBGLED_RD_INIT      { _LATD8 = 0; _TRISD8 = 0; }
 
-    // TP55 on Digital Power Development Board
-    #define DBGPIN_3_SET	{ _LATB5 = 1; }
-    #define DBGPIN_3_CLEAR	{ _LATB5 = 0; }
-    #define DBGPIN_3_TOGGLE	{ _LATB5 ^= 1; }
-    #define DBGPIN_3_INIT	{ _LATB5 = 0; _TRISB5 = 0; }
+    // TP54 on Digital Power Development Board
+    #define DBGLED_GN_SET       { _LATD13 = 1; }
+    #define DBGLED_GN_CLEAR     { _LATD13 = 0; }
+    #define DBGLED_GN_TOGGLE	{ _LATD13 ^= 1; }
+    #define DBGLED_GN_INIT      { _LATD13 = 0; _TRISD13 = 0; }
+
+    // TP34 on Digital Power Development Board
+    #define DGBPIN_2_SET        { _LATD5 = 1; }
+    #define DGBPIN_2_CLEAR     { _LATD5 = 0; }
+    #define DGBPIN_2_TOGGLE	   { _LATD5 ^= 1; }
+    #define DGBPIN_2_INIT      { _LATD5 = 0; _TRISD5 = 0; }
+
+    // TP36 on Digital Power Development Board
+    #define DGBPIN_3_SET        { _LATD6 = 1; }
+    #define DGBPIN_3_CLEAR     { _LATD6 = 0; }
+    #define DGBPIN_3_TOGGLE	   { _LATD6 ^= 1; }
+    #define DGBPIN_3_INIT      { _LATD6 = 0; _TRISD6 = 0; }
+
 #endif
 
 

@@ -50,8 +50,7 @@ void __attribute__((__interrupt__, auto_psv, context)) _ADCAN6Interrupt(void)
     vref_avg += (V_REF_MIN + (volatile uint16_t)res);   // Add most recent value to averaging buffer
     
     if(!(++avg_cnt & 0x00FF)) {     // After 256 samples, calculate average value
-
-        converter.data.v_ref= (vref_avg >> 8);  // Copy averaged value into reference value
+        converter.data.v_ref = (vref_avg >> 8);  // Copy averaged value into reference value
         vref_avg = 0;                       // Reset averaging buffer
     }
     
