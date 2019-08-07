@@ -77,7 +77,7 @@
         <targetDevice>dsPIC33CK256MP506</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>ICD4Tool</platformTool>
+        <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.36</languageToolchainVersion>
         <platform>3</platform>
@@ -171,6 +171,9 @@
         <property key="relax" value="false"/>
         <property key="warning-level" value="emit-warnings"/>
       </C30-AS>
+      <C30-CO>
+        <property key="coverage-enable" value=""/>
+      </C30-CO>
       <C30-LD>
         <property key="additional-options-use-response-files" value="false"/>
         <property key="boot-eeprom" value="no_eeprom"/>
@@ -426,6 +429,7 @@
         <property key="PG6" value="true"/>
         <property key="PG7" value="true"/>
         <property key="PG8" value="true"/>
+        <property key="PMP" value="true"/>
         <property key="PTGFRZ" value="true"/>
         <property key="QEI1" value="true"/>
         <property key="QEI2" value="true"/>
