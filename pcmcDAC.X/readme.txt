@@ -25,7 +25,7 @@ and resetting to 100mV/usec.
     - TP6:  High-Speed Comparator Feedback Input => Jumper J5/J6 @ TP6 to connect pin to potentiometer P1
 
     - TP34: Debug Pin indicating when a new value is written to DAC1DATH
-    - TP36: Debug Pin (not used)
+    - TP36: Debug Pin indicating ADC ISR activity
 
 2) Executing this Example
 ==========================

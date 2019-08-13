@@ -92,12 +92,12 @@ xc16-ld 1.36 (B)
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x19e           0x26d  (621)
-.text                        0x39e               0xa12           0xf1b  (3867)
-.dinit                       0xdb0                0x48            0x6c  (108)
-.text                        0xdf8                0x5e            0x8d  (141)
+.text                        0x200               0x1b6           0x291  (657)
+.text                        0x3b6               0xc40          0x1260  (4704)
+.dinit                       0xff6                0x48            0x6c  (108)
+.text                       0x103e                0x6a            0x9f  (159)
 
-                 Total "program" memory used (bytes):         0x1281  (4737) 1%
+                 Total "program" memory used (bytes):         0x15fc  (5628) 2%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x6000]
@@ -105,7 +105,7 @@ section                    address   length (PC units)   length (bytes) (dec)
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
 .ndata                      0x1000                   0            0x12  (18)
-_05009F605d4af109           0x1012                   0             0xa  (10)
+_0502EF605d51fd06           0x1012                   0             0xa  (10)
 .nbss                       0x101c                   0            0x10  (16)
 .bss                        0x102c                   0            0x44  (68)
 .data                       0x1070                   0             0x6  (6)
@@ -175,70 +175,70 @@ External Symbols in Program Memory (by address):
                   0x000248                  __data_init_extended
                   0x000248                  __data_init
                   0x0002fa                  __ADCAN6Interrupt
-                  0x000370                  __ADCAN16Interrupt
-                  0x000398                  __DefaultInterrupt
-                  0x00039e                  _init_pwm_module
-                  0x000430                  _init_pwm
-                  0x00053a                  _init_trig_pwm
-                  0x0005dc                  _launch_pwm
-                  0x00060c                  _init_adc_module
-                  0x0006b4                  _init_vin_adc
-                  0x0006fc                  _init_adc
-                  0x000744                  _init_pot_adc
-                  0x000796                  _launch_adc
-                  0x0007ea                  _init_pwr_control
-                  0x000892                  _launch_pwr_control
-                  0x0008a0                  _exec_pwr_control
-                  0x0009b0                  _init_fosc
-                  0x000aaa                  _init_aclk
-                  0x000b0a                  _main
-                  0x000bd2                  _c2p2z_Update
-                  0x000c4e                  _c2p2z_Reset
-                  0x000c66                  _c2p2z_Precharge
-                  0x000c86                  _c2p2z_Init
-                  0x000d1c                  _init_acmp_module
-                  0x000d5c                  _init_acmp
-                  0x000da8                  _launch_acmp
-                  0x000df8                  _init_timer1
-                  0x000e28                  _init_gpio
-                  0x000e4c                  _ext_reference_init
+                  0x000382                  __ADCAN16Interrupt
+                  0x0003b0                  __DefaultInterrupt
+                  0x0003b6                  _init_pwr_control
+                  0x0004ae                  _launch_pwr_control
+                  0x0004c0                  _exec_pwr_control
+                  0x000670                  _init_pwm_module
+                  0x00070a                  _init_pwm
+                  0x00082e                  _init_trig_pwm
+                  0x0008da                  _launch_pwm
+                  0x00091c                  _init_adc_module
+                  0x0009ce                  _init_vin_adc
+                  0x000a1c                  _init_adc
+                  0x000a68                  _init_pot_adc
+                  0x000abe                  _launch_adc
+                  0x000b30                  _init_fosc
+                  0x000c76                  _init_aclk
+                  0x000d0c                  _main
+                  0x000e02                  _c2p2z_Update
+                  0x000e7e                  _c2p2z_Reset
+                  0x000e96                  _c2p2z_Precharge
+                  0x000eb6                  _init_acmp_module
+                  0x000f00                  _init_acmp
+                  0x000f54                  _launch_acmp
+                  0x000f60                  _c2p2z_Init
+                  0x00103e                  _init_timer1
+                  0x001072                  _init_gpio
+                  0x00109a                  _ext_reference_init
                   0x02bf00                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x000370                  __ADCAN16Interrupt
+                  0x000382                  __ADCAN16Interrupt
                   0x0002fa                  __ADCAN6Interrupt
-                  0x000398                  __DefaultInterrupt
+                  0x0003b0                  __DefaultInterrupt
                   0x02bf00                  __FSEC.sec
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000c86                  _c2p2z_Init
-                  0x000c66                  _c2p2z_Precharge
-                  0x000c4e                  _c2p2z_Reset
-                  0x000bd2                  _c2p2z_Update
-                  0x0008a0                  _exec_pwr_control
-                  0x000e4c                  _ext_reference_init
-                  0x000aaa                  _init_aclk
-                  0x000d5c                  _init_acmp
-                  0x000d1c                  _init_acmp_module
-                  0x0006fc                  _init_adc
-                  0x00060c                  _init_adc_module
-                  0x0009b0                  _init_fosc
-                  0x000e28                  _init_gpio
-                  0x000744                  _init_pot_adc
-                  0x000430                  _init_pwm
-                  0x00039e                  _init_pwm_module
-                  0x0007ea                  _init_pwr_control
-                  0x000df8                  _init_timer1
-                  0x00053a                  _init_trig_pwm
-                  0x0006b4                  _init_vin_adc
-                  0x000da8                  _launch_acmp
-                  0x000796                  _launch_adc
-                  0x0005dc                  _launch_pwm
-                  0x000892                  _launch_pwr_control
-                  0x000b0a                  _main
+                  0x000f60                  _c2p2z_Init
+                  0x000e96                  _c2p2z_Precharge
+                  0x000e7e                  _c2p2z_Reset
+                  0x000e02                  _c2p2z_Update
+                  0x0004c0                  _exec_pwr_control
+                  0x00109a                  _ext_reference_init
+                  0x000c76                  _init_aclk
+                  0x000f00                  _init_acmp
+                  0x000eb6                  _init_acmp_module
+                  0x000a1c                  _init_adc
+                  0x00091c                  _init_adc_module
+                  0x000b30                  _init_fosc
+                  0x001072                  _init_gpio
+                  0x000a68                  _init_pot_adc
+                  0x00070a                  _init_pwm
+                  0x000670                  _init_pwm_module
+                  0x0003b6                  _init_pwr_control
+                  0x00103e                  _init_timer1
+                  0x00082e                  _init_trig_pwm
+                  0x0009ce                  _init_vin_adc
+                  0x000f54                  _launch_acmp
+                  0x000abe                  _launch_adc
+                  0x0008da                  _launch_pwm
+                  0x0004ae                  _launch_pwr_control
+                  0x000d0c                  _main
 
 Memory Configuration
 
@@ -316,7 +316,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x19e
+.text             0x000200        0x1b6
  *(.init)
  .init            0x000200         0x48 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedch.o)
                   0x000200                  __resetPRI
@@ -328,20 +328,20 @@ LOAD c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libfx-elf.a
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr.text        0x0002fa         0x76 build/DPDB_MA330048/production/src/task_external_reference.o
+ .isr.text        0x0002fa         0x88 build/DPDB_MA330048/production/src/task_external_reference.o
                   0x0002fa                  __ADCAN6Interrupt
- .isr.text        0x000370         0x28 build/DPDB_MA330048/production/src/pwr_control.o
-                  0x000370                  __ADCAN16Interrupt
- .isr             0x000398          0x4 default_isr
-                  0x000398                  __DefaultInterrupt
+ .isr.text        0x000382         0x2e build/DPDB_MA330048/production/src/pwr_control.o
+                  0x000382                  __ADCAN16Interrupt
+ .isr             0x0003b0          0x4 default_isr
+                  0x0003b0                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x00039c          0x2 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalch.Leo)
-                  0x00039c                  __crt_start_mode
-                  0x00039c                  __crt_start_mode_normal
+                  0x0003b4          0x2 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalch.Leo)
+                  0x0003b4                  __crt_start_mode
+                  0x0003b4                  __crt_start_mode_normal
 
 usercode
  *(usercode)
@@ -402,21 +402,21 @@ __FBTSEQ
 .comment
  *(.comment)
 
-.debug_info       0x000000       0xb8db
+.debug_info       0x000000       0xba69
  *(.debug_info)
- .debug_info      0x000000        0x734 build/DPDB_MA330048/production/src/task_external_reference.o
- .debug_info      0x000734        0x133 build/DPDB_MA330048/production/src/config_bits.o
- .debug_info      0x000867        0x12f build/DPDB_MA330048/production/src/globals.o
- .debug_info      0x000996        0x864 build/DPDB_MA330048/production/src/c2p2z.o
- .debug_info      0x0011fa         0xa1 build/DPDB_MA330048/production/src/c2p2z_asm.o
- .debug_info      0x00129b        0xdbb build/DPDB_MA330048/production/src/pwr_control.o
- .debug_info      0x002056        0xe13 build/DPDB_MA330048/production/src/init/init_fosc.o
- .debug_info      0x002e69        0x673 build/DPDB_MA330048/production/src/init/init_timer1.o
- .debug_info      0x0034dc        0x53d build/DPDB_MA330048/production/src/init/init_gpio.o
- .debug_info      0x003a19       0x26c5 build/DPDB_MA330048/production/src/init/init_pwm.o
- .debug_info      0x0060de       0x10be build/DPDB_MA330048/production/src/init/init_acmp.o
- .debug_info      0x00719c       0x384b build/DPDB_MA330048/production/src/init/init_adc.o
- .debug_info      0x00a9e7        0xef4 build/DPDB_MA330048/production/src/main.o
+ .debug_info      0x000000        0x8c2 build/DPDB_MA330048/production/src/task_external_reference.o
+ .debug_info      0x0008c2        0x133 build/DPDB_MA330048/production/src/config_bits.o
+ .debug_info      0x0009f5        0x12f build/DPDB_MA330048/production/src/globals.o
+ .debug_info      0x000b24        0x864 build/DPDB_MA330048/production/src/c2p2z.o
+ .debug_info      0x001388         0xa1 build/DPDB_MA330048/production/src/c2p2z_asm.o
+ .debug_info      0x001429        0xdbb build/DPDB_MA330048/production/src/pwr_control.o
+ .debug_info      0x0021e4        0xe13 build/DPDB_MA330048/production/src/init/init_fosc.o
+ .debug_info      0x002ff7        0x673 build/DPDB_MA330048/production/src/init/init_timer1.o
+ .debug_info      0x00366a        0x53d build/DPDB_MA330048/production/src/init/init_gpio.o
+ .debug_info      0x003ba7       0x26c5 build/DPDB_MA330048/production/src/init/init_pwm.o
+ .debug_info      0x00626c       0x10be build/DPDB_MA330048/production/src/init/init_acmp.o
+ .debug_info      0x00732a       0x384b build/DPDB_MA330048/production/src/init/init_adc.o
+ .debug_info      0x00ab75        0xef4 build/DPDB_MA330048/production/src/main.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0xa10
@@ -435,47 +435,47 @@ __FBTSEQ
  .debug_abbrev    0x0007ca         0xf3 build/DPDB_MA330048/production/src/init/init_adc.o
  .debug_abbrev    0x0008bd        0x153 build/DPDB_MA330048/production/src/main.o
 
-.debug_line       0x000000        0xe02
+.debug_line       0x000000        0xe42
  *(.debug_line)
- .debug_line      0x000000        0x13e build/DPDB_MA330048/production/src/task_external_reference.o
- .debug_line      0x00013e         0x1a build/DPDB_MA330048/production/src/config_bits.o
- .debug_line      0x000158         0x1a build/DPDB_MA330048/production/src/globals.o
- .debug_line      0x000172        0x11a build/DPDB_MA330048/production/src/c2p2z.o
- .debug_line      0x00028c         0x99 build/DPDB_MA330048/production/src/c2p2z_asm.o
- .debug_line      0x000325        0x200 build/DPDB_MA330048/production/src/pwr_control.o
- .debug_line      0x000525        0x129 build/DPDB_MA330048/production/src/init/init_fosc.o
- .debug_line      0x00064e        0x107 build/DPDB_MA330048/production/src/init/init_timer1.o
- .debug_line      0x000755        0x100 build/DPDB_MA330048/production/src/init/init_gpio.o
- .debug_line      0x000855        0x1c9 build/DPDB_MA330048/production/src/init/init_pwm.o
- .debug_line      0x000a1e        0x121 build/DPDB_MA330048/production/src/init/init_acmp.o
- .debug_line      0x000b3f        0x185 build/DPDB_MA330048/production/src/init/init_adc.o
- .debug_line      0x000cc4        0x13e build/DPDB_MA330048/production/src/main.o
+ .debug_line      0x000000        0x144 build/DPDB_MA330048/production/src/task_external_reference.o
+ .debug_line      0x000144         0x1a build/DPDB_MA330048/production/src/config_bits.o
+ .debug_line      0x00015e         0x1a build/DPDB_MA330048/production/src/globals.o
+ .debug_line      0x000178        0x119 build/DPDB_MA330048/production/src/c2p2z.o
+ .debug_line      0x000291         0x99 build/DPDB_MA330048/production/src/c2p2z_asm.o
+ .debug_line      0x00032a        0x21c build/DPDB_MA330048/production/src/pwr_control.o
+ .debug_line      0x000546        0x12d build/DPDB_MA330048/production/src/init/init_fosc.o
+ .debug_line      0x000673        0x109 build/DPDB_MA330048/production/src/init/init_timer1.o
+ .debug_line      0x00077c        0x102 build/DPDB_MA330048/production/src/init/init_gpio.o
+ .debug_line      0x00087e        0x1d1 build/DPDB_MA330048/production/src/init/init_pwm.o
+ .debug_line      0x000a4f        0x127 build/DPDB_MA330048/production/src/init/init_acmp.o
+ .debug_line      0x000b76        0x18e build/DPDB_MA330048/production/src/init/init_adc.o
+ .debug_line      0x000d04        0x13e build/DPDB_MA330048/production/src/main.o
 
-.debug_frame      0x000000        0x2b0
+.debug_frame      0x000000        0x368
  *(.debug_frame)
- .debug_frame     0x000000         0x40 build/DPDB_MA330048/production/src/task_external_reference.o
- .debug_frame     0x000040         0x30 build/DPDB_MA330048/production/src/c2p2z.o
- .debug_frame     0x000070         0x5e build/DPDB_MA330048/production/src/pwr_control.o
- .debug_frame     0x0000ce         0x4c build/DPDB_MA330048/production/src/init/init_fosc.o
- .debug_frame     0x00011a         0x24 build/DPDB_MA330048/production/src/init/init_timer1.o
- .debug_frame     0x00013e         0x24 build/DPDB_MA330048/production/src/init/init_gpio.o
- .debug_frame     0x000162         0x60 build/DPDB_MA330048/production/src/init/init_pwm.o
- .debug_frame     0x0001c2         0x44 build/DPDB_MA330048/production/src/init/init_acmp.o
- .debug_frame     0x000206         0x70 build/DPDB_MA330048/production/src/init/init_adc.o
- .debug_frame     0x000276         0x3a build/DPDB_MA330048/production/src/main.o
+ .debug_frame     0x000000         0x4c build/DPDB_MA330048/production/src/task_external_reference.o
+ .debug_frame     0x00004c         0x30 build/DPDB_MA330048/production/src/c2p2z.o
+ .debug_frame     0x00007c         0x84 build/DPDB_MA330048/production/src/pwr_control.o
+ .debug_frame     0x000100         0x4c build/DPDB_MA330048/production/src/init/init_fosc.o
+ .debug_frame     0x00014c         0x30 build/DPDB_MA330048/production/src/init/init_timer1.o
+ .debug_frame     0x00017c         0x30 build/DPDB_MA330048/production/src/init/init_gpio.o
+ .debug_frame     0x0001ac         0x84 build/DPDB_MA330048/production/src/init/init_pwm.o
+ .debug_frame     0x000230         0x68 build/DPDB_MA330048/production/src/init/init_acmp.o
+ .debug_frame     0x000298         0xa0 build/DPDB_MA330048/production/src/init/init_adc.o
+ .debug_frame     0x000338         0x30 build/DPDB_MA330048/production/src/main.o
 
-.debug_str        0x000000        0x833
+.debug_str        0x000000        0x83c
  *(.debug_str)
- .debug_str       0x000000         0x1c build/DPDB_MA330048/production/src/task_external_reference.o
- .debug_str       0x00001c         0xf8 build/DPDB_MA330048/production/src/c2p2z.o
- .debug_str       0x000114         0x4e build/DPDB_MA330048/production/src/pwr_control.o
- .debug_str       0x000162         0x5e build/DPDB_MA330048/production/src/init/init_fosc.o
- .debug_str       0x0001c0         0x25 build/DPDB_MA330048/production/src/init/init_timer1.o
- .debug_str       0x0001e5         0x13 build/DPDB_MA330048/production/src/init/init_gpio.o
- .debug_str       0x0001f8        0x2ce build/DPDB_MA330048/production/src/init/init_pwm.o
- .debug_str       0x0004c6         0xda build/DPDB_MA330048/production/src/init/init_acmp.o
- .debug_str       0x0005a0        0x23d build/DPDB_MA330048/production/src/init/init_adc.o
- .debug_str       0x0007dd         0x56 build/DPDB_MA330048/production/src/main.o
+ .debug_str       0x000000         0x25 build/DPDB_MA330048/production/src/task_external_reference.o
+ .debug_str       0x000025         0xf8 build/DPDB_MA330048/production/src/c2p2z.o
+ .debug_str       0x00011d         0x4e build/DPDB_MA330048/production/src/pwr_control.o
+ .debug_str       0x00016b         0x5e build/DPDB_MA330048/production/src/init/init_fosc.o
+ .debug_str       0x0001c9         0x25 build/DPDB_MA330048/production/src/init/init_timer1.o
+ .debug_str       0x0001ee         0x13 build/DPDB_MA330048/production/src/init/init_gpio.o
+ .debug_str       0x000201        0x2ce build/DPDB_MA330048/production/src/init/init_pwm.o
+ .debug_str       0x0004cf         0xda build/DPDB_MA330048/production/src/init/init_acmp.o
+ .debug_str       0x0005a9        0x23d build/DPDB_MA330048/production/src/init/init_adc.o
+ .debug_str       0x0007e6         0x56 build/DPDB_MA330048/production/src/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -4064,62 +4064,62 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000108       0x12d3
+                  0x000108       0x12f0
  .debug_pubtypes
-                  0x000108         0xd4 build/DPDB_MA330048/production/src/task_external_reference.o
+                  0x000108         0xf1 build/DPDB_MA330048/production/src/task_external_reference.o
  .debug_pubtypes
-                  0x0001dc         0x12 build/DPDB_MA330048/production/src/config_bits.o
+                  0x0001f9         0x12 build/DPDB_MA330048/production/src/config_bits.o
  .debug_pubtypes
-                  0x0001ee         0x12 build/DPDB_MA330048/production/src/globals.o
+                  0x00020b         0x12 build/DPDB_MA330048/production/src/globals.o
  .debug_pubtypes
-                  0x000200         0xcc build/DPDB_MA330048/production/src/c2p2z.o
+                  0x00021d         0xcc build/DPDB_MA330048/production/src/c2p2z.o
  .debug_pubtypes
-                  0x0002cc        0x16f build/DPDB_MA330048/production/src/pwr_control.o
+                  0x0002e9        0x16f build/DPDB_MA330048/production/src/pwr_control.o
  .debug_pubtypes
-                  0x00043b        0x133 build/DPDB_MA330048/production/src/init/init_fosc.o
+                  0x000458        0x133 build/DPDB_MA330048/production/src/init/init_fosc.o
  .debug_pubtypes
-                  0x00056e         0x95 build/DPDB_MA330048/production/src/init/init_timer1.o
+                  0x00058b         0x95 build/DPDB_MA330048/production/src/init/init_timer1.o
  .debug_pubtypes
-                  0x000603         0x5b build/DPDB_MA330048/production/src/init/init_gpio.o
+                  0x000620         0x5b build/DPDB_MA330048/production/src/init/init_gpio.o
  .debug_pubtypes
-                  0x00065e        0x487 build/DPDB_MA330048/production/src/init/init_pwm.o
+                  0x00067b        0x487 build/DPDB_MA330048/production/src/init/init_pwm.o
  .debug_pubtypes
-                  0x000ae5        0x1b2 build/DPDB_MA330048/production/src/init/init_acmp.o
+                  0x000b02        0x1b2 build/DPDB_MA330048/production/src/init/init_acmp.o
  .debug_pubtypes
-                  0x000c97        0x5ba build/DPDB_MA330048/production/src/init/init_adc.o
+                  0x000cb4        0x5ba build/DPDB_MA330048/production/src/init/init_adc.o
  .debug_pubtypes
-                  0x001251        0x18a build/DPDB_MA330048/production/src/main.o
+                  0x00126e        0x18a build/DPDB_MA330048/production/src/main.o
 
 __c30_signature
-                  0x0013db         0x54
+                  0x0013f8         0x54
  __c30_signature
-                  0x0013db          0x6 build/DPDB_MA330048/production/src/task_external_reference.o
+                  0x0013f8          0x6 build/DPDB_MA330048/production/src/task_external_reference.o
  __c30_signature
-                  0x0013e1          0x6 build/DPDB_MA330048/production/src/config_bits.o
+                  0x0013fe          0x6 build/DPDB_MA330048/production/src/config_bits.o
  __c30_signature
-                  0x0013e7          0x6 build/DPDB_MA330048/production/src/globals.o
+                  0x001404          0x6 build/DPDB_MA330048/production/src/globals.o
  __c30_signature
-                  0x0013ed          0x6 build/DPDB_MA330048/production/src/c2p2z.o
+                  0x00140a          0x6 build/DPDB_MA330048/production/src/c2p2z.o
  __c30_signature
-                  0x0013f3          0x6 build/DPDB_MA330048/production/src/pwr_control.o
+                  0x001410          0x6 build/DPDB_MA330048/production/src/pwr_control.o
  __c30_signature
-                  0x0013f9          0x6 build/DPDB_MA330048/production/src/init/init_fosc.o
+                  0x001416          0x6 build/DPDB_MA330048/production/src/init/init_fosc.o
  __c30_signature
-                  0x0013ff          0x6 build/DPDB_MA330048/production/src/init/init_timer1.o
+                  0x00141c          0x6 build/DPDB_MA330048/production/src/init/init_timer1.o
  __c30_signature
-                  0x001405          0x6 build/DPDB_MA330048/production/src/init/init_gpio.o
+                  0x001422          0x6 build/DPDB_MA330048/production/src/init/init_gpio.o
  __c30_signature
-                  0x00140b          0x6 build/DPDB_MA330048/production/src/init/init_pwm.o
+                  0x001428          0x6 build/DPDB_MA330048/production/src/init/init_pwm.o
  __c30_signature
-                  0x001411          0x6 build/DPDB_MA330048/production/src/init/init_acmp.o
+                  0x00142e          0x6 build/DPDB_MA330048/production/src/init/init_acmp.o
  __c30_signature
-                  0x001417          0x6 build/DPDB_MA330048/production/src/init/init_adc.o
+                  0x001434          0x6 build/DPDB_MA330048/production/src/init/init_adc.o
  __c30_signature
-                  0x00141d          0x6 build/DPDB_MA330048/production/src/main.o
+                  0x00143a          0x6 build/DPDB_MA330048/production/src/main.o
  __c30_signature
-                  0x001423          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedch.o)
+                  0x001440          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedch.o)
  __c30_signature
-                  0x001429          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extendedch.o)
+                  0x001446          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extendedch.o)
 
 .ndata              0x1000         0x12
  .ndata             0x1000         0x12 build/DPDB_MA330048/production/src/c2p2z.o
@@ -4132,9 +4132,9 @@ __c30_signature
                     0x100e                  _c2p2z_post_shift_A
                     0x1010                  _c2p2z_post_scaler
 
-_05009F605d4af109
+_0502EF605d51fd06
                     0x1012          0xa
- _05009F605d4af109
+ _0502EF605d51fd06
                     0x1012          0xa build/DPDB_MA330048/production/src/c2p2z.o
                     0x1012                  _c2p2z_coefficients
 
@@ -4235,45 +4235,45 @@ _05009F605d4af109
  .ivt._ADCAN16Interrupt
                   0x0000ea          0x2 build/DPDB_MA330048/production/src/pwr_control.o
 
-.text             0x00039e        0xa12
- .text            0x00039e        0x26e build/DPDB_MA330048/production/src/init/init_pwm.o
-                  0x00039e                  _init_pwm_module
-                  0x000430                  _init_pwm
-                  0x00053a                  _init_trig_pwm
-                  0x0005dc                  _launch_pwm
- .text            0x00060c        0x1de build/DPDB_MA330048/production/src/init/init_adc.o
-                  0x00060c                  _init_adc_module
-                  0x0006b4                  _init_vin_adc
-                  0x0006fc                  _init_adc
-                  0x000744                  _init_pot_adc
-                  0x000796                  _launch_adc
- .text            0x0007ea        0x1c6 build/DPDB_MA330048/production/src/pwr_control.o
-                  0x0007ea                  _init_pwr_control
-                  0x000892                  _launch_pwr_control
-                  0x0008a0                  _exec_pwr_control
- .text            0x0009b0        0x15a build/DPDB_MA330048/production/src/init/init_fosc.o
-                  0x0009b0                  _init_fosc
-                  0x000aaa                  _init_aclk
- .text            0x000b0a         0xc8 build/DPDB_MA330048/production/src/main.o
-                  0x000b0a                  _main
- .text            0x000bd2         0xb4 build/DPDB_MA330048/production/src/c2p2z_asm.o
-                  0x000bd2                  _c2p2z_Update
-                  0x000c4e                  _c2p2z_Reset
-                  0x000c66                  _c2p2z_Precharge
- .text            0x000c86         0x96 build/DPDB_MA330048/production/src/c2p2z.o
-                  0x000c86                  _c2p2z_Init
- .text            0x000d1c         0x94 build/DPDB_MA330048/production/src/init/init_acmp.o
-                  0x000d1c                  _init_acmp_module
-                  0x000d5c                  _init_acmp
-                  0x000da8                  _launch_acmp
+.text             0x0003b6        0xc40
+ .text            0x0003b6        0x2ba build/DPDB_MA330048/production/src/pwr_control.o
+                  0x0003b6                  _init_pwr_control
+                  0x0004ae                  _launch_pwr_control
+                  0x0004c0                  _exec_pwr_control
+ .text            0x000670        0x2ac build/DPDB_MA330048/production/src/init/init_pwm.o
+                  0x000670                  _init_pwm_module
+                  0x00070a                  _init_pwm
+                  0x00082e                  _init_trig_pwm
+                  0x0008da                  _launch_pwm
+ .text            0x00091c        0x214 build/DPDB_MA330048/production/src/init/init_adc.o
+                  0x00091c                  _init_adc_module
+                  0x0009ce                  _init_vin_adc
+                  0x000a1c                  _init_adc
+                  0x000a68                  _init_pot_adc
+                  0x000abe                  _launch_adc
+ .text            0x000b30        0x1dc build/DPDB_MA330048/production/src/init/init_fosc.o
+                  0x000b30                  _init_fosc
+                  0x000c76                  _init_aclk
+ .text            0x000d0c         0xf6 build/DPDB_MA330048/production/src/main.o
+                  0x000d0c                  _main
+ .text            0x000e02         0xb4 build/DPDB_MA330048/production/src/c2p2z_asm.o
+                  0x000e02                  _c2p2z_Update
+                  0x000e7e                  _c2p2z_Reset
+                  0x000e96                  _c2p2z_Precharge
+ .text            0x000eb6         0xaa build/DPDB_MA330048/production/src/init/init_acmp.o
+                  0x000eb6                  _init_acmp_module
+                  0x000f00                  _init_acmp
+                  0x000f54                  _launch_acmp
+ .text            0x000f60         0x96 build/DPDB_MA330048/production/src/c2p2z.o
+                  0x000f60                  _c2p2z_Init
 
-.dinit            0x000db0         0x48
- .dinit           0x000db0         0x48 data_init
+.dinit            0x000ff6         0x48
+ .dinit           0x000ff6         0x48 data_init
 
-.text             0x000df8         0x5e
- .text            0x000df8         0x30 build/DPDB_MA330048/production/src/init/init_timer1.o
-                  0x000df8                  _init_timer1
- .text            0x000e28         0x24 build/DPDB_MA330048/production/src/init/init_gpio.o
-                  0x000e28                  _init_gpio
- .text            0x000e4c          0xa build/DPDB_MA330048/production/src/task_external_reference.o
-                  0x000e4c                  _ext_reference_init
+.text             0x00103e         0x6a
+ .text            0x00103e         0x34 build/DPDB_MA330048/production/src/init/init_timer1.o
+                  0x00103e                  _init_timer1
+ .text            0x001072         0x28 build/DPDB_MA330048/production/src/init/init_gpio.o
+                  0x001072                  _init_gpio
+ .text            0x00109a          0xe build/DPDB_MA330048/production/src/task_external_reference.o
+                  0x00109a                  _ext_reference_init

@@ -41,6 +41,8 @@ void __attribute__((__interrupt__, auto_psv, context)) _ADCAN6Interrupt(void)
 {
     volatile uint16_t samp=0;   // local buffer variable for the most recent ADC result
     volatile uint32_t res=0;    // local buffer variable for the scaling range
+
+DGBPIN_3_SET;
     
     samp = ADCBUF6; // read latest sample
     samp <<= 3;     // normalize to Q15
@@ -56,5 +58,8 @@ void __attribute__((__interrupt__, auto_psv, context)) _ADCAN6Interrupt(void)
     
     _ADCAN6IF = 0;  // Clear the ADCANx interrupt flag 
     
+DGBPIN_3_CLEAR;
+
+
 }
 

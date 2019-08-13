@@ -60,7 +60,9 @@ volatile uint16_t init_fosc(void) {
 	if ((OSCCONbits.LOCK != 1) || (timeout >= TIMEOUT_LIMIT)) // Error occurred? 
 	{ return(0); } // => If so, return error code
    
-
+    // Add enforced delay
+    for(timeout=0xffff; timeout>0; timeout--);
+    
     // Return Success/Failure
     return((1 - OSCCONbits.CF));					// Return oscillator fail status bit
 
@@ -73,19 +75,19 @@ volatile uint16_t init_aclk(void) {
     // Clear Enable-bit of Auxiliary PLL during configuration
     ACLKCON1bits.APLLEN = 0;
 
-    // Set AVCO divider of Auxiliary PLL 
-    APLLDIV1bits.AVCODIV   = 0b11;  // AVCO Scaler = AFVCO
-
+    // Select clock input source (either primary oscillator or internal FRC)
+    ACLKCON1bits.FRCSEL = 1;        // FRC is the clock source for APLL
+	
     // Configure APLL pre-scaler, APLL post-scaler, APLL divisor
+    // APLL frequency limited to 400 MHz due to DAC counter limit
     ACLKCON1bits.APLLPRE   = 1;     // N1 (non zero)
-	APLLFBD1bits.APLLFBDIV = 125;   // M  = APLLFBD 
+	APLLFBD1bits.APLLFBDIV = 100;   // M  = APLLFBD 
     APLLDIV1bits.APOST1DIV = 2;     // N2 (non zero)
     APLLDIV1bits.APOST2DIV = 1;     // N3 (non zero)
 
-    // Select clock input source (either primary oscillator or internal FRC)
-    ACLKCON1bits.FRCSEL = 1;        // FRC is the clock source for APLL
-//    ACLKCON1bits.ASRCSEL = 0;       // ?? unknown bit from device header file
-	
+    // Set AVCO divider of Auxiliary PLL 
+    APLLDIV1bits.AVCODIV   = 0b11;  // AVCO Scaler = AFVCO
+
     // Set Enable-bit of Auxiliary PLL 
     ACLKCON1bits.APLLEN = 1;
 
@@ -93,6 +95,9 @@ volatile uint16_t init_aclk(void) {
     if(!ACLKCON1bits.APLLEN)
     { return(0); }
         
+    // Add enforced delay
+    for(timeout=0xffff; timeout>0; timeout--);
+    
     // Wait 5000 while loops for APLL to Lock
     while((ACLKCON1bits.APLLCK != 1) && (timeout++<TIMEOUT_LIMIT));		
 	if ((ACLKCON1bits.APLLCK != 1) || (timeout++ >= TIMEOUT_LIMIT))	// PLL still not locked in? 

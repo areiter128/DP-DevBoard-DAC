@@ -82,8 +82,8 @@ extern "C" {
  * *************************************************************************************************/
 
 #define CPU_FREQUENCY       100000000   // CPU frequency in [Hz]
-#define AUX_FREQUENCY       500000000   // Auxiliary Clock Frequency in [Hz]
-#define PWM_FREQUENCY       500000000   // PWM Generator Base Clock Frequency in [Hz]
+#define AUX_FREQUENCY       400000000   // Auxiliary Clock Frequency in [Hz]
+#define PWM_FREQUENCY       400000000   // PWM Generator Base Clock Frequency in [Hz]
 
 /*!ADC Settings
  * *************************************************************************************************
@@ -98,9 +98,9 @@ extern "C" {
  * 
  * *************************************************************************************************/
 
-#define ADC_REF              3.300 // ADC reference voltage in V
-#define ADC_RES              12.0  // ADC resolution in [bit]
-#define ADC_GRAN             (float)(ADC_REF / pow(2.0, ADC_RES)) // ADC granularity in [V/tick]
+#define ADC_REF         3.300 // ADC reference voltage in V
+#define ADC_RES         12.0  // ADC resolution in [bit]
+#define ADC_GRAN        (float)(ADC_REF / pow(2.0, ADC_RES)) // ADC granularity in [V/tick]
 
 /*!ADC Settings
  * *************************************************************************************************
@@ -128,9 +128,9 @@ extern "C" {
 #define DACCLK          (double)(2.0/FDAC)      // DAC input clock (period) selected in [sec]
 
 //-------    
-#define DAC_CBLANK_TIME 300e-9  // Comparator Blanking Period in [ns] applied when DAC reference changes 
+#define DAC_CBLANK_TIME 100e-9  // Comparator Blanking Period in [ns] applied when DAC reference changes 
 #define DAC_T_RESET     300e-9  // Transition Mode Duration
-#define DAC_T_SETTLING  340e-9  // Time from Start of Transition Mode until Steady-State Filter is Enabled
+#define DAC_T_SETTLING  350e-9  // Time from Start of Transition Mode until Steady-State Filter is Enabled
 
 // Device-specific DAC settings
 #define DAC_MIN         (uint16_t)(DAC_MINIMUM / DAC_GRAN)
@@ -156,6 +156,7 @@ extern "C" {
  * *************************************************************************************************/
     
 #define SWITCHING_FREQUENCY         400e+3      // Power Supply Switching Frequency in [Hz]
+    
 //------ macros
 #define SWITCHING_PERIOD            (1.0/SWITCHING_FREQUENCY)   // Power Supply Switching Period in [sec]
 #define PWM_RES                     (1.0/AUX_FREQUENCY)         // PWM Resolution
@@ -163,12 +164,12 @@ extern "C" {
 //------ 
 
 #define MAXIMUM_DUTY_RATIO          0.80    // Maximum Duty Ratio in [%]
-#define LEB_PERIOD                  200e-9  // Leading Edge Blanking period in [sec]
-#define SLOPE_START_DELAY           150e-9  // Delay in {sec] until the slope compensation ramp starts
+#define LEB_PERIOD                  100e-9  // Leading Edge Blanking period in [sec]
+#define SLOPE_START_DELAY           100e-9  // Delay in {sec] until the slope compensation ramp starts
 #define SLOPE_STOP_DELAY            0.80    // Delay in {sec] until the slope compensation ramp stops
-#define VOUT_ADC_TRIGGER_DELAY      (SWITCHING_PERIOD - 1000e-9) // ADC trigger delay in [sec] used to sample output voltage
+#define VOUT_ADC_TRIGGER_DELAY      (SWITCHING_PERIOD - 800e-9) // ADC trigger delay in [sec] used to sample output voltage
 #define PWM_MASTER_PHASE_SHIFT      0e-9  // Switching frequency phase shift in [sec]
-#define PWM_AUXILIARY_PHASE_SHIFT   200e-9  // Switching frequency phase shift in [sec]
+#define PWM_AUXILIARY_PHASE_SHIFT   100e-9  // Switching frequency phase shift in [sec]
 
 //------ macros
 #define MAX_DUTY_CYCLE              (uint16_t)(PWM_PERIOD * MAXIMUM_DUTY_RATIO)     // This sets the maximum duty cycle
