@@ -68,7 +68,7 @@ int main(void) {
 
         exec_pwr_control();
                
-        if (tgl_cnt++ > TGL_INTERVAL) // Count 100usec loops until LED toggle interval is exceeded
+        if (tgl_cnt++ > TGL_INTERVAL) // Count 100 usec loops until LED toggle interval is exceeded
         {
             DBGLED_TOGGLE;
             tgl_cnt = 0;

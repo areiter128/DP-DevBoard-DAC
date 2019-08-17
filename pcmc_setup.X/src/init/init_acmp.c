@@ -59,7 +59,7 @@ volatile uint16_t init_acmp(void) {
     DAC1CONLbits.CMPPOL = 0; // Comparator Output Polarity Control: Output is (0=non-inverted, 1=inverted)
     DAC1CONLbits.INSEL = 0b011; // Comparator Input Source Select: feedback is connected to (0=CMPxA, 1=CMPxB, 2=CMPxC, 3=CMPxD) input pin
     DAC1CONLbits.HYSPOL = 0; // Comparator Hysteresis Polarity Selection: Hysteresis is applied to the (0=rising, 1=falling) edge of the comparator output
-    DAC1CONLbits.HYSSEL = 0b00; // Comparator Hysteresis Selection: 45 mv hysteresis (0 = 0mV, 1 = 15mV, 2 = 30mV, 3 = 45mV)
+    DAC1CONLbits.HYSSEL = 0b01; // Comparator Hysteresis Selection: 45 mv hysteresis (0 = 0mV, 1 = 15mV, 2 = 30mV, 3 = 45mV)
     
     // DACxCONH: DACx CONTROL HIGH REGISTER
     
