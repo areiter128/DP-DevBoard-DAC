@@ -14,7 +14,7 @@
 
 volatile uint16_t tgl_cnt = 0;  // local counter of LED toggle loops
 #define TGL_INTERVAL    2999    // LED toggle interval of (2999 + 1) x 100usec = 100ms
-#define TMR1_TIMEOUT    30000   // Timeout protection for Timer1 interrupt flag bit
+#define TMR_TIMEOUT     30000   // Timeout protection for Timer1 interrupt flag bit
 
 volatile uint32_t dac_cnt = 0;  // local counter of LED toggle loops
 #define DACMOD_COUNT    1999    // DAC increment interval of (1999 + 1) x 100usec = 200ms
@@ -50,8 +50,8 @@ int main(void) {
     __builtin_write_RPCON(0x0000);
     _TRISB11 = 0;
     _LATB11 = 0;
-    RPOR5bits.RP43R = 23;      // Assign COMP1 (=23) output to pin RB11 = RP43  (DSP_GPIO3)
-__builtin_write_RPCON(0x0800);
+    RPOR5bits.RP43R = 23;      // Assign COMP1 (=23) output to pin RB11 = RP43  (DSP_GPIO3)             
+    __builtin_write_RPCON(0x0800);
 
 // ===========================================
     
@@ -61,7 +61,7 @@ __builtin_write_RPCON(0x0800);
     while (1) {
 
         // wait for timer1 to overrun
-        while ((!_T1IF) && (timeout++ < TMR1_TIMEOUT));
+        while ((!_T1IF) && (timeout++ < TMR_TIMEOUT));
         timeout = 0;    // Reset timeout counter
         _T1IF = 0; // reset Timer1 interrupt flag bit
         DBGPIN_1_TOGGLE; // Toggle DEBUG-PIN
