@@ -36,8 +36,8 @@ volatile uint16_t init_fosc(void) {
     
     // Configure PLL prescaler, both PLL postscalers, and PLL feedback divider
     CLKDIVbits.PLLPRE = 1; // N1=1
-    PLLFBDbits.PLLFBDIV = 200; // M = 125
-    PLLDIVbits.POST1DIV = 4; // N2=5
+    PLLFBDbits.PLLFBDIV = 200; // M = 200
+    PLLDIVbits.POST1DIV = 4; // N2=4
     PLLDIVbits.POST2DIV = 1; // N3=1
     PLLDIVbits.VCODIV = 0; // VCO Output divider is set to Fvco/4
     
